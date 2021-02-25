@@ -40,16 +40,12 @@ jobs:
           path: marlin/Marlin
 
       # [DEBUG] Let's see whats there
-      - run: ls "$GITHUB_WORKSPACE/marlin" || true
-      - run: ls "marlin/Configurations" || true
       - run: ls "$GITHUB_WORKSPACE/marlin/Configurations" || true
-      - run: ls "$GITHUB_WORKSPACE/marlin/Configurations/config/examples/Creality/Ender-3 Pro/BigTreeTech SKR Mini E3 2.0/*.h" || true
-      - run: ls "marlin/Marlin" || true
-      - run: ls "$GITHUB_WORKSPACE/marlin/Marlin" || true
+      - run: ls "$GITHUB_WORKSPACE/marlin/Configurations/config/examples/Creality/Ender-3 Pro/BigTreeTech SKR Mini E3 2.0/Configuration.h" || true
 
       # Copy over configs
       - name: Copy configs
-        run: cp "$GITHUB_WORKSPACE/marlin/Configurations/config/examples/Creality/Ender-3 Pro/BigTreeTech SKR Mini E3 2.0/*.h" "Marlin/Marlin/"
+        run: cp "marlin/Configurations/config/examples/Creality/Ender-3 Pro/BigTreeTech SKR Mini E3 2.0/Configuration.h" "marlin/Marlin/Marlin/"
 
       # Build
       - name: Run PlatformIO
