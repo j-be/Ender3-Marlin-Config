@@ -1,6 +1,6 @@
 name: Build Marlin
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
@@ -37,6 +37,14 @@ jobs:
         with:
           repository: MarlinFirmware/Marlin
           ref: refs/tags/2.0.7.2
+
+     # [DEBUG] Let's see whats there
+     -  run: ls "$GITHUB_WORKSPACE" || true
+     -  run: ls "Configurations" || true
+     -  run: ls "$GITHUB_WORKSPACE/Configurations" || true
+     -  run: ls "$GITHUB_WORKSPACE/Configurations/config/examples/Creality/Ender-3 Pro/BigTreeTech SKR Mini E3 2.0/*.h" || true
+     -  run: ls "Marlin" || true
+     -  run: ls "$GITHUB_WORKSPACE/Marlin" || true
 
       # Copy over configs
       - name: Copy configs
