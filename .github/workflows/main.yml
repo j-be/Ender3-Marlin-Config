@@ -32,24 +32,25 @@ jobs:
           pip install --upgrade platformio
 
       # Clone Marlin
-      #- name: Clone Marlin source
-      #  uses: actions/checkout@v2
-      #  with:
-      #    repository: MarlinFirmware/Marlin
-      #    ref: refs/tags/2.0.7.2
+      - name: Clone Marlin source
+        uses: actions/checkout@v2
+        with:
+          repository: MarlinFirmware/Marlin
+          ref: refs/tags/2.0.7.2
+          path: marlin/Marlin
 
       # [DEBUG] Let's see whats there
-      - run: ls "$GITHUB_WORKSPACE" || true
-      - run: ls "Configurations" || true
-      - run: ls "$GITHUB_WORKSPACE/Configurations" || true
-      - run: ls "$GITHUB_WORKSPACE/Configurations/config/examples/Creality/Ender-3 Pro/BigTreeTech SKR Mini E3 2.0/*.h" || true
-      - run: ls "Marlin" || true
-      - run: ls "$GITHUB_WORKSPACE/Marlin" || true
+      - run: ls "$GITHUB_WORKSPACE/marlin" || true
+      - run: ls "marlin/Configurations" || true
+      - run: ls "$GITHUB_WORKSPACE/marlin/Configurations" || true
+      - run: ls "$GITHUB_WORKSPACE/marlin/Configurations/config/examples/Creality/Ender-3 Pro/BigTreeTech SKR Mini E3 2.0/*.h" || true
+      - run: ls "marlin/Marlin" || true
+      - run: ls "$GITHUB_WORKSPACE/marlin/Marlin" || true
 
       # Copy over configs
       - name: Copy configs
-        run: cp "$GITHUB_WORKSPACE/Configurations/config/examples/Creality/Ender-3 Pro/BigTreeTech SKR Mini E3 2.0/*.h" "Marlin/Marlin/"
+        run: cp "$GITHUB_WORKSPACE/marlin/Configurations/config/examples/Creality/Ender-3 Pro/BigTreeTech SKR Mini E3 2.0/*.h" "Marlin/Marlin/"
 
       # Build
       - name: Run PlatformIO
-        run: cd Marlin && pio run -e STM32F103RC_btt_512K
+        run: cd marlin/Marlin && pio run -e STM32F103RC_btt_512K
