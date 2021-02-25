@@ -32,11 +32,11 @@ jobs:
           pip install --upgrade platformio
 
       # Clone Marlin
-      - name: Clone Marlin source
-        uses: actions/checkout@v2
-        with:
-          repository: MarlinFirmware/Marlin
-          ref: refs/tags/2.0.7.2
+      #- name: Clone Marlin source
+      #  uses: actions/checkout@v2
+      #  with:
+      #    repository: MarlinFirmware/Marlin
+      #    ref: refs/tags/2.0.7.2
 
       # [DEBUG] Let's see whats there
       - run: ls "$GITHUB_WORKSPACE" || true
