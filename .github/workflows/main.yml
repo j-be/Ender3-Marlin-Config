@@ -48,3 +48,9 @@ jobs:
       # Build
       - name: Run PlatformIO
         run: cd marlin/Marlin && pio run -e STM32F103RC_btt_512K
+
+      # Upload build
+      - uses: actions/upload-artifact@v2
+        with:
+          name: firmware.bin
+          path: "marlin/Marlin/.pio/build/STM32F103RC_btt_512K/firmware.bin"
