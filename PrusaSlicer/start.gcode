@@ -12,6 +12,7 @@ M104 S[first_layer_temperature] ; set extruder temp
 M190 S[first_layer_bed_temperature] ; wait for bed temp
 M109 S[first_layer_temperature] ; wait for extruder temp
 
+G1 X2 Y10 Z0.28 F3000
 G92 E0
 G1 Y190 E15 F1500 ; intro line
 G1 X2.3 F5000
