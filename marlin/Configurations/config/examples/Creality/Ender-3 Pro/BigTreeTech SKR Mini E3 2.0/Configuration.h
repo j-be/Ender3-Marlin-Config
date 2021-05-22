@@ -460,7 +460,7 @@
 
 // Below this temperature the heater will be switched off
 // because it probably indicates a broken thermistor wire.
-#define HEATER_0_MINTEMP   15
+#define HEATER_0_MINTEMP   10
 #define HEATER_1_MINTEMP   HEATER_0_MINTEMP
 #define HEATER_2_MINTEMP   HEATER_0_MINTEMP
 #define HEATER_3_MINTEMP   HEATER_0_MINTEMP
