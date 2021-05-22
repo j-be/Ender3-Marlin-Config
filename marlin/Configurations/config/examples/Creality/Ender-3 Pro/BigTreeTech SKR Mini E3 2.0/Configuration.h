@@ -461,14 +461,15 @@
 // Below this temperature the heater will be switched off
 // because it probably indicates a broken thermistor wire.
 #define HEATER_0_MINTEMP   15
-#define HEATER_1_MINTEMP   15
-#define HEATER_2_MINTEMP   15
-#define HEATER_3_MINTEMP   15
-#define HEATER_4_MINTEMP   15
-#define HEATER_5_MINTEMP   15
-#define HEATER_6_MINTEMP   15
-#define HEATER_7_MINTEMP   15
-#define BED_MINTEMP        15
+#define HEATER_1_MINTEMP   HEATER_0_MINTEMP
+#define HEATER_2_MINTEMP   HEATER_0_MINTEMP
+#define HEATER_3_MINTEMP   HEATER_0_MINTEMP
+#define HEATER_4_MINTEMP   HEATER_0_MINTEMP
+#define HEATER_5_MINTEMP   HEATER_0_MINTEMP
+#define HEATER_6_MINTEMP   HEATER_0_MINTEMP
+#define HEATER_7_MINTEMP   HEATER_0_MINTEMP
+#define BED_MINTEMP        HEATER_0_MINTEMP
+#define CHAMBER_MINTEMP    HEATER_0_MINTEMP
 
 // Above this temperature the heater will be switched off.
 // This can protect components from overheating, but NOT from shorts and failures.
