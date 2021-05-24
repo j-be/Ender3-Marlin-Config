@@ -140,7 +140,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Ender-3 Pro v2.4-dev (Voron M4)"
+#define CUSTOM_MACHINE_NAME "Ender-3 Pro v2.4.0 (Voron M4)"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
