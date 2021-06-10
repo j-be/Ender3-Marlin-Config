@@ -36,7 +36,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: MarlinFirmware/Marlin
-          ref: refs/tags/2.0.8.1
+          ref: refs/tags/2.0.8.2
           path: marlin/Marlin
 
       # Copy over configs
