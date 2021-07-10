@@ -36,7 +36,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: MarlinFirmware/Marlin
-          ref: refs/tags/2.0.8.2
+          ref: refs/tags/2.0.9.1
           path: marlin/Marlin
 
       # Copy over configs
@@ -47,10 +47,10 @@ jobs:
 
       # Build
       - name: Run PlatformIO
-        run: cd marlin/Marlin && pio run -e STM32F103RC_btt_stm32
+        run: cd marlin/Marlin && pio run -e STM32F103RE_btt
 
       # Upload build
       - uses: actions/upload-artifact@v2
         with:
           name: firmware.bin
-          path: "marlin/Marlin/.pio/build/STM32F103RC_btt_stm32/firmware.bin"
+          path: "marlin/Marlin/.pio/build/STM32F103RE_btt/firmware.bin"
